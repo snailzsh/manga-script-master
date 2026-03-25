@@ -1,0 +1,89 @@
+{
+  "skill_name": "manga-script-master",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "帮我写一个漫剧脚本，主题是：都市龙王归来。大概就是一个被所有人瞧不起的上门女婿，其实是隐退的商业帝国继承人。第一集他在妻子家族聚会上被岳母当众羞辱，然后身份开始露出端倪。我用SD来画图，竖屏9:16的。",
+      "expected_output": "应包含完整的角色设定卡（含AI标签组）、单集脚本（含时间轴和情绪标签）、AI分镜提示词表（SD格式，含负面提示词）",
+      "files": [],
+      "assertions": [
+        {"name": "has_character_card", "check": "输出包含角色设定卡，含姓名、人设、视觉锚点"},
+        {"name": "has_ai_tags_english", "check": "角色设定卡包含英文AI标签组（如1boy, hair color等）"},
+        {"name": "has_emotion_library", "check": "角色设定卡包含情绪表情库（怒/冷/惊/甜/哭等英文标签）"},
+        {"name": "has_timed_script", "check": "脚本包含时间轴标注（如0:00-0:03等）"},
+        {"name": "has_visual_actions", "check": "所有情感都具象化为可视动作，无纯心理描写"},
+        {"name": "has_storyboard_table", "check": "包含分镜表格（含序号、时间、景别、画面描述、台词、AI提示词）"},
+        {"name": "has_sd_format", "check": "AI提示词使用SD标签式格式，含负面提示词"},
+        {"name": "has_hook_ending", "check": "脚本结尾有悬念钩子或下集预告"},
+        {"name": "has_aspect_ratio", "check": "提示词中包含9:16竖屏比例"},
+        {"name": "prompt_count_8_to_15", "check": "分镜数量在8-15个之间"},
+        {"name": "character_tag_consistency", "check": "角色AI标签在多个分镜中保持一致复用"},
+        {"name": "has_transition_effects", "check": "分镜表包含转场/动效标注"}
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "我想做一个校园甜宠漫剧，讲的是学霸女生和体育生男生的故事。女生表面高冷但其实偷偷关注男生很久了。第一集是下雨天，女生假装路过借伞给男生。要那种心跳加速的感觉。MJ出图。",
+      "expected_output": "应包含甜宠赛道的角色设定卡、以心动瞬间为核心的脚本、Midjourney格式的分镜提示词（含--ar 9:16 --niji 6等参数）",
+      "files": [],
+      "assertions": [
+        {"name": "has_character_card", "check": "输出包含角色设定卡，含姓名、人设、视觉锚点"},
+        {"name": "has_ai_tags_english", "check": "角色设定卡包含英文AI标签组"},
+        {"name": "has_emotion_library", "check": "角色设定卡包含情绪表情库"},
+        {"name": "has_timed_script", "check": "脚本包含时间轴标注"},
+        {"name": "has_visual_actions", "check": "所有情感都具象化为可视动作"},
+        {"name": "has_storyboard_table", "check": "包含分镜表格"},
+        {"name": "has_mj_format", "check": "AI提示词使用MJ格式（自然语言 + --ar 9:16 --niji 6等）"},
+        {"name": "has_hook_ending", "check": "脚本结尾有悬念钩子"},
+        {"name": "has_aspect_ratio", "check": "提示词中包含--ar 9:16"},
+        {"name": "prompt_count_8_to_15", "check": "分镜数量在8-15个之间"},
+        {"name": "character_tag_consistency", "check": "角色AI标签在多个分镜中保持一致复用"}
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "写个悬疑漫剧脚本。设定是一个女生每天早上醒来发现手机里多了一张自己睡着的照片，但她独居。第一集她发现照片里的背景不是她的房间。不指定AI工具，你推荐一个通用格式就行。",
+      "expected_output": "应包含悬疑赛道的角色设定卡、层层递进的恐怖揭示脚本、通用格式的AI分镜提示词、适合悬疑氛围的光影设计",
+      "files": [],
+      "assertions": [
+        {"name": "has_character_card", "check": "输出包含角色设定卡"},
+        {"name": "has_ai_tags_english", "check": "角色设定卡包含英文AI标签组"},
+        {"name": "has_emotion_library", "check": "角色设定卡包含情绪表情库"},
+        {"name": "has_timed_script", "check": "脚本包含时间轴标注"},
+        {"name": "has_visual_actions", "check": "所有情感都具象化为可视动作"},
+        {"name": "has_storyboard_table", "check": "包含分镜表格"},
+        {"name": "has_seedance_format", "check": "默认推荐Seedance 2.0格式，包含中文视频提示词"},
+        {"name": "has_seedance_timestamp", "check": "Seedance提示词使用时间戳分镜（如0-3秒、4-8秒等）"},
+        {"name": "has_seedance_reference", "check": "包含角色参考图提示词（@图片N系统）"},
+        {"name": "has_negative_prompts_or_prohibition", "check": "包含负面提示词或Seedance禁止项"},
+        {"name": "has_hook_ending", "check": "脚本结尾有悬念钩子"},
+        {"name": "has_video_segments", "check": "视频按≤15秒分段，有衔接点描述"},
+        {"name": "has_horror_atmosphere", "check": "包含恐怖/悬疑氛围的光影和音效设计"},
+        {"name": "character_tag_consistency", "check": "角色视觉描述在多个分镜/片段中保持一致"}
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "帮我写个仙侠漫剧脚本，用Seedance 2.0生成视频。主题是女剑修在宗门大比上被师姐陷害落入魔渊，觉醒远古剑灵逆袭。第一集从大比被暗算开始。要那种高燃逆袭的感觉，抖音竖屏。",
+      "expected_output": "应包含角色设定卡、高燃逆袭脚本、Seedance 2.0中文视频提示词（含时间戳分镜、@图片引用、台词标注、音效描述、视频分段衔接）",
+      "files": [],
+      "assertions": [
+        {"name": "has_character_card", "check": "输出包含角色设定卡，含姓名、人设、视觉锚点"},
+        {"name": "has_ai_tags_english", "check": "角色设定卡包含英文AI标签组（用于静态参考图）"},
+        {"name": "has_emotion_library", "check": "角色设定卡包含情绪表情库"},
+        {"name": "has_timed_script", "check": "脚本包含时间轴标注"},
+        {"name": "has_visual_actions", "check": "所有情感都具象化为可视动作"},
+        {"name": "has_seedance_chinese_prompts", "check": "Seedance视频提示词全部使用中文"},
+        {"name": "has_seedance_timestamp", "check": "视频提示词使用时间戳分镜（0-3秒、4-8秒等）"},
+        {"name": "has_seedance_reference_images", "check": "包含角色参考图生成提示词，使用@图片N引用"},
+        {"name": "has_seedance_dialogue", "check": "台词用引号包裹，标注角色和情绪"},
+        {"name": "has_seedance_sfx", "check": "音效描述单独成行"},
+        {"name": "has_video_segments", "check": "视频按≤15秒分段，有衔接点描述"},
+        {"name": "has_seedance_prohibition", "check": "提示词结尾包含禁止项（禁止文字/字幕/水印）"},
+        {"name": "has_hook_ending", "check": "脚本结尾有悬念钩子"},
+        {"name": "character_tag_consistency", "check": "角色视觉描述/@图片引用在多个片段中保持一致"},
+        {"name": "has_workflow_guidance", "check": "包含Seedance工作流建议（生成顺序、参考图准备等）"}
+      ]
+    }
+  ]
+}
